@@ -324,3 +324,31 @@ public class MyMiddleware(RequestDelegate next) {
 }
 app.UseMiddleware<MyMiddleware>();
 ```
+
+## 14. **Exception Handling in .NET Core**  
+
+✅ **1. Try-Catch (Method-Level)**  
+```csharp
+try { /* Code */ }  
+catch (Exception ex) { return StatusCode(500, "Error"); }
+```
+
+✅ **2. Exception Filters (Controller-Level)**  
+```csharp
+public class CustomExceptionFilter : ExceptionFilterAttribute {
+    public override void OnException(ExceptionContext ctx) {
+        ctx.Result = new ObjectResult("Error") { StatusCode = 500 };
+    }
+}
+```
+`[ServiceFilter(typeof(CustomExceptionFilter))]`
+
+✅ **3. Global Handling (`UseExceptionHandler`)**  -> `Program.cs`
+```csharp
+app.UseExceptionHandler("/error");
+```
+
+✅ **4. Return Structured Error (`ProblemDetails`)**  
+```csharp
+return Problem(statusCode: 500, title: "Error");
+```
