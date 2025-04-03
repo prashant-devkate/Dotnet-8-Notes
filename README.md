@@ -25,4 +25,28 @@
 5. **Benefits**:  
    ✅ Improves **code maintainability**  
    ✅ Enables **unit testing** (mocking dependencies)  
-   ✅ Follows **SOLID principles**  
+   ✅ Follows **SOLID principles**
+
+## 2. **`ConfigureServices()` & `Configure()` in .NET Core 8+**  
+
+✅ **No longer exist in .NET 8+** (Removed from `Startup.cs`).  
+✅ **Replaced by `Program.cs` minimal hosting model.**  
+
+### **New Approach in .NET 8+**  
+
+1. **Service Configuration** (Replaces `ConfigureServices`)  
+   ```csharp
+   var builder = WebApplication.CreateBuilder(args);
+   builder.Services.AddControllers();
+   ```
+
+2. **Middleware Configuration** (Replaces `Configure`)  
+   ```csharp
+   var app = builder.Build();
+   app.UseRouting();
+   app.UseAuthorization();
+   app.MapControllers();
+   app.Run();
+   ```  
+
+🚀 **Everything is now configured in `Program.cs`!**
