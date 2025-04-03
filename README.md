@@ -68,3 +68,35 @@ string json = JsonSerializer.Serialize(obj);
 ```csharp
 var person = JsonSerializer.Deserialize<Person>(json);
 ```
+
+## 4. **Synchronous vs Asynchronous Programming**  
+
+#### **1. Synchronous Programming**  
+✅ **Executes tasks sequentially** (one after another).  
+✅ **Blocks execution** until the current task completes.  
+✅ **Slower for I/O operations** (e.g., database, API calls).  
+
+**Example:**  
+```csharp
+public void SyncMethod() {
+    Console.WriteLine("Task 1");
+    Thread.Sleep(3000); // Simulating delay
+    Console.WriteLine("Task 2");
+}
+```
+
+#### **2. Asynchronous Programming**  
+✅ **Executes tasks concurrently** (doesn’t block).  
+✅ **Uses `async` & `await` for non-blocking execution.**  
+✅ **Faster for I/O-bound tasks.**  
+
+**Example:**  
+```csharp
+public async Task AsyncMethod() {
+    Console.WriteLine("Task 1");
+    await Task.Delay(3000); // Non-blocking delay
+    Console.WriteLine("Task 2");
+}
+```
+
+🚀 **Use async for better performance in I/O-bound operations!**
