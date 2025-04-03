@@ -510,3 +510,15 @@ interface IScanner { void Scan(); }
 interface ILogger { void Log(string message); }
 class App { private readonly ILogger _logger; public App(ILogger logger) { _logger = logger; } }
 ```
+
+## 24. **Eager vs Lazy Loading in EF Core**  
+
+✅ **Eager Loading** → Loads related data **immediately** using `.Include()`.  -> Performance 
+```csharp
+var products = context.Products.Include(p => p.Category).ToList();
+```
+
+✅ **Lazy Loading** → Loads related data **only when accessed** (requires virtual navigation properties).   -> Flexibility
+```csharp
+public class Product { public virtual Category Category { get; set; } }
+```
