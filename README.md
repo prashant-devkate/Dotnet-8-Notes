@@ -442,3 +442,18 @@ IEnumerable<Product> products = db.Products.ToList(); // Fetches all, filters la
 ```csharp
 IQueryable<Product> products = db.Products.Where(p => p.Price > 100); // Filters in DB
 ```
+
+## 21. **`IActionResult` in .NET 8**  
+
+✅ Interface for HTTP responses in ASP.NET Core.
+✅ Supports Ok(), NotFound(), BadRequest(), etc.
+
+✅ **`IActionResult`** → Generic response.  
+```csharp
+public IActionResult Get() => Ok("Success");
+```
+
+✅ **`ActionResult<T>`** → Strongly typed.  
+```csharp
+public ActionResult<Product> Get() => new Product();
+```
