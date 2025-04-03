@@ -166,3 +166,38 @@ string name = null; // ❌ Compilation Warning (Possible null assignment)
 ```
 
 🚀 **Helps avoid runtime `NullReferenceException`**
+
+## 7. **Logging in .NET Core 8**  
+
+✅ **Built-in logging via `Microsoft.Extensions.Logging`**  
+
+### **1. Log Levels**  
+🔹 `LogTrace` → Detailed logs  
+🔹 `LogDebug` → Debug info  
+🔹 `LogInformation` → App flow  
+🔹 `LogWarning` → Potential issues  
+🔹 `LogError` → Errors  
+🔹 `LogCritical` → Critical failures  
+
+---
+
+### **2. Configure Logging (`Program.cs`)**  
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+builder.Logging.AddConsole(); // Add logging
+var app = builder.Build();
+```
+
+---
+
+### **3. Use Logging in Services/Controllers**  
+```csharp
+public class MyService(ILogger<MyService> logger) {
+    public void Process() {
+        logger.LogInformation("Processing started");
+        logger.LogError("Error occurred!");
+    }
+}
+```
+
+---
