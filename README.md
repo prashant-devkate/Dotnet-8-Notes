@@ -237,3 +237,13 @@ void GetValues(out int a, out int b) { a = 10; b = 20; }
 int x, y; GetValues(out x, out y); // ✅ No need to initialize  
 ```
 
+## 10. **`const` for  vs. `readonly` in C#**  
+
+🔹 **`const`** → Compile-time, fixed value, must initialize.  
+🔹 **`readonly`** → Runtime values.  
+
+```csharp
+const double Pi = 3.14;  // Compile-time constant
+readonly int id;         
+public MyClass(int value) { id = value; } // Set at runtime
+```
