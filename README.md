@@ -1,4 +1,4 @@
-# Dotnet-Core-Notes
+# Dotnet-8-Notes
 
 ## 1. **Dependency Injection (DI) - Quick Notes**  
 
