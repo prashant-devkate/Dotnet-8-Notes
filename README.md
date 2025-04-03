@@ -105,6 +105,7 @@ public async Task AsyncMethod() {
 ✅ Definition: Attributes are metadata annotations.
 
 1. Commonly Used Attributes
+   
 ✔ API & Routing Attributes
 [ApiController] → Marks a controller as an API controller.
 
