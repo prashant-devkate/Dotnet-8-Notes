@@ -200,4 +200,24 @@ public class MyService(ILogger<MyService> logger) {
 }
 ```
 
----
+## 8. **HttpClient vs. HttpClientFactory in .NET Core 8**  
+
+### **1. ❌ `HttpClient` (Not Recommended)**  → Simple but can cause **socket exhaustion**.
+```csharp
+using var client = new HttpClient();
+var response = await client.GetAsync("https://api.example.com/data");
+```
+
+### **2. ✅ `HttpClientFactory` (Best Practice)**  → Manages `HttpClient` efficiently. 
+🔹 **Register in `Program.cs`**  
+```csharp
+builder.Services.AddHttpClient();
+```
+
+🔹 **Inject & Use in Service**  
+```csharp
+public class MyService(HttpClient client) {
+    public async Task<string> GetData() => await client.GetStringAsync("https://api.example.com/data");
+}
+```
+🚀 **Use `HttpClientFactory` for better performance!**
