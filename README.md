@@ -416,3 +416,17 @@ builder.Services.AddAuthorization(options =>
 ```csharp
 [Authorize(Policy = "AdminOnly")]
 ```
+
+## 19. **Routing in .NET Core**  
+
+✅ **Attribute Routing**  -> for APIs
+```csharp
+[Route("api/products")]
+[HttpGet("{id}")]
+public IActionResult Get(int id) => Ok($"Product {id}");
+```
+
+✅ **Conventional Routing** (`Program.cs`)   -> for MVC
+```csharp
+app.MapControllerRoute("default", "{controller}/{action}/{id?}");
+```
