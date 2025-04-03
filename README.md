@@ -537,7 +537,11 @@ public class Product { public virtual Category Category { get; set; } }
 ## 26. Programming questions
 
 ✅ Reverse a string without using built-in functions.
+
 ✅ Find if a number is prime.
+
 ✅ Count occurrences of a character in a string.
+
 ✅ Swap two variables without a third variable.
+
 ✅ Check if a string is a palindrome.
