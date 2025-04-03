@@ -352,3 +352,24 @@ app.UseExceptionHandler("/error");
 ```csharp
 return Problem(statusCode: 500, title: "Error");
 ```
+
+## 15. ### **.NET Core Filters**  
+
+ **Filters** control execution flow 
+
+✅ **1. Types of Filters**  (ARAER)
+- **Authorization** → `[Authorize]` (Runs before action).  
+- **Resource** → Before/after model binding.  
+- **Action** → Before/after action execution.  
+- **Exception** → Handles unhandled errors.  
+- **Result** → Before/after returning results.  
+
+✅ **2. Custom Action Filter**  
+```csharp
+public class LogFilter : ActionFilterAttribute {
+    public override void OnActionExecuting(ActionExecutingContext ctx) {
+        Console.WriteLine("Action Started...");
+    }
+}
+```
+
