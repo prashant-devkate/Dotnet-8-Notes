@@ -298,4 +298,29 @@ app.UseRouting();
 #### **3. Server Errors**  
 - **`500 Internal Server Error`** → Unexpected error  
 - **`502 Bad Gateway`** → Invalid response from upstream  
-- **`503 Service Unavailable`** → Server overloaded  
+- **`503 Service Unavailable`** → Server overloaded
+
+## 13. **.NET Core Middleware - Quick Notes**  
+
+Middleware processes requests & responses in the pipeline.  
+
+#### **1. Built-in Middleware**  ✔ Add in `Program.cs`.
+- `UseRouting()` → Enables routing.  
+- `UseAuthorization()` → Handles security.  
+- `UseExceptionHandler()` → Manages errors.  
+- `UseCors()` → Allows cross-origin requests.  
+
+#### **2. Custom Middleware**  
+✔ Create a separate class.  
+✔ Implement `Invoke` method.  
+✔ Register in `Program.cs`.  
+
+```csharp
+public class MyMiddleware(RequestDelegate next) {  
+    public async Task Invoke(HttpContext ctx) {  
+        // Custom logic  
+        await next(ctx);  
+    }  
+}
+app.UseMiddleware<MyMiddleware>();
+```
