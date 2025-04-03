@@ -221,3 +221,19 @@ public class MyService(HttpClient client) {
 }
 ```
 🚀 **Use `HttpClientFactory` for better performance!**
+
+## 9. **`ref` vs. `out` in C#**  
+
+✅ **Use `ref` to modify & `out` to return multiple values!**
+
+🔹 **`ref`** → Requires initialization before passing.  
+🔹 **`out`** → No need to initialize before passing.  
+
+```csharp
+void Modify(ref int x) { x += 10; }  
+int value = 5; Modify(ref value); // ✅ Must be initialized
+
+void GetValues(out int a, out int b) { a = 10; b = 20; }  
+int x, y; GetValues(out x, out y); // ✅ No need to initialize  
+```
+
