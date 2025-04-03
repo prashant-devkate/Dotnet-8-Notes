@@ -479,3 +479,34 @@ class Dog : Animal { public override void MakeSound() => Console.WriteLine("Bark
 ```csharp
 class Cat : Animal { public override void MakeSound() => Console.WriteLine("Meow!"); }
 ```
+
+## 23. **SOLID Principles in C# .NET**  -> Better code maintainability & scalability!
+
+✅ **S** - **Single Responsibility** → One class = One responsibility.  
+```csharp
+class Logger { public void Log(string message) { /* Logging logic */ } }
+```
+
+✅ **O** - **Open/Closed** → Open for extension, closed for modification.  
+```csharp
+interface IShape { double Area(); }
+class Circle : IShape { public double Area() => Math.PI * r * r; }
+```
+
+✅ **L** - **Liskov Substitution** → Subclasses must replace base classes without breaking behavior.  
+```csharp
+class Bird { public virtual void Fly() { } }
+class Penguin : Bird { public override void Fly() => throw new NotSupportedException(); } // Violates Liskov
+```
+
+✅ **I** - **Interface Segregation** → No unnecessary methods in interfaces.  
+```csharp
+interface IPrinter { void Print(); }
+interface IScanner { void Scan(); }
+```
+
+✅ **D** - **Dependency Inversion** → Depend on abstractions, not concretions.  
+```csharp
+interface ILogger { void Log(string message); }
+class App { private readonly ILogger _logger; public App(ILogger logger) { _logger = logger; } }
+```
