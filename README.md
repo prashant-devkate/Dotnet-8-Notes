@@ -259,7 +259,7 @@ public MyClass(int value) { id = value; } // Set at runtime
 ```csharp
 [HttpGet] public IActionResult GetItems() { }
 ```
-### **2. EF Core (Database)**  
+#### **2. EF Core (Database)**  
 - `Add` → Insert  
 - `Find` → Locate  
 - `Update` → Modify  
@@ -270,11 +270,11 @@ public MyClass(int value) { id = value; } // Set at runtime
 dbContext.Add(entity);
 dbContext.SaveChanges();
 ```
-### **3. Dependency Injection**  
+#### **3. Dependency Injection**  
 - `Register` → Add service  
 - `Inject` → Use service  
 
-### **4. Middleware**  
+#### **4. Middleware**  
 - `Use` → Add  
 - `Invoke` → Execute  
 ```csharp
