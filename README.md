@@ -247,3 +247,36 @@ const double Pi = 3.14;  // Compile-time constant
 readonly int id;         
 public MyClass(int value) { id = value; } // Set at runtime
 ```
+
+## 11. **Action Verbs in .NET Core**  
+
+#### **1. HTTP (Web API)**  
+- `Get` → Retrieve  
+- `Post` → Create  
+- `Put` → Update  
+- `Delete` → Remove  
+
+```csharp
+[HttpGet] public IActionResult GetItems() { }
+```
+### **2. EF Core (Database)**  
+- `Add` → Insert  
+- `Find` → Locate  
+- `Update` → Modify  
+- `Remove` → Delete  
+- `SaveChanges` → Commit  
+
+```csharp
+dbContext.Add(entity);
+dbContext.SaveChanges();
+```
+### **3. Dependency Injection**  
+- `Register` → Add service  
+- `Inject` → Use service  
+
+### **4. Middleware**  
+- `Use` → Add  
+- `Invoke` → Execute  
+```csharp
+app.UseRouting();
+```
