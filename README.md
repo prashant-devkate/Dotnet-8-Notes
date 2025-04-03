@@ -386,3 +386,10 @@ StringBuilder sb = new("Hello");
 sb.Append(" World");  // No new object  
 ```
 
+## 17. **.NET 5 vs .NET 8 – Key Differences**  
+
+**.NET 8 :- Faster, efficient, cloud-ready**
+
+✅ **Performance** → .NET 8 is **faster**
+✅ **Long-Term Support (LTS)** → .NET 8 (LTS).    
+✅ **Cloud & AI** → .NET 8 **integrates better with cloud & AI workloads**.  
