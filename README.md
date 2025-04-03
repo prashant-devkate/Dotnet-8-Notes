@@ -522,3 +522,14 @@ var products = context.Products.Include(p => p.Category).ToList();
 ```csharp
 public class Product { public virtual Category Category { get; set; } }
 ```
+
+## 25. **EF Core Basics**  
+
+**EF Core:** Simplifies DB operations
+
+1️⃣ **Install Packages** → `Microsoft.EntityFrameworkCore.SqlServer`, `Tools`.  
+2️⃣ **Define Model** → Create entity classes.  
+3️⃣ **Create `DbContext`** → Configure `DbSet<T>` and database connection.  
+4️⃣ **Migrations** → `dotnet ef migrations add Init` → `dotnet ef database update`.  
+5️⃣ **CRUD Operations** → `Add()`, `Find()`, `Update()`, `Remove()`, `SaveChanges()`.  
+6️⃣ **Eager vs Lazy Loading** → `.Include()` for eager, virtual props for lazy. 
