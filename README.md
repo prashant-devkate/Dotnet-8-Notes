@@ -280,3 +280,22 @@ dbContext.SaveChanges();
 ```csharp
 app.UseRouting();
 ```
+
+## 12. **Important .NET API Status Codes**  
+
+#### **1. Success Responses**  
+- **`200 OK`** → Request successful  
+- **`201 Created`** → Resource created  
+- **`204 No Content`** → Successful, but no response  
+
+#### **2. Client Errors**  
+- **`400 Bad Request`** → Invalid input  
+- **`401 Unauthorized`** → Authentication required  
+- **`403 Forbidden`** → Access denied  
+- **`404 Not Found`** → Resource missing  
+- **`409 Conflict`** → Duplicate/conflicting request  
+
+#### **3. Server Errors**  
+- **`500 Internal Server Error`** → Unexpected error  
+- **`502 Bad Gateway`** → Invalid response from upstream  
+- **`503 Service Unavailable`** → Server overloaded  
