@@ -100,3 +100,35 @@ public async Task AsyncMethod() {
 ```
 
 🚀 **Use async for better performance in I/O-bound operations!**
+
+## 5. Attributes in .NET Core 8
+✅ Definition: Attributes are metadata annotations.
+
+1. Commonly Used Attributes
+✔ API & Routing Attributes
+[ApiController] → Marks a controller as an API controller.
+
+[Route("api/[controller]")] → Defines the route pattern.
+
+[HttpGet], [HttpPost], [HttpPut], [HttpDelete] → Define HTTP methods.
+
+```csharp
+[ApiController]
+[Route("api/users")]
+public class UsersController : ControllerBase {
+    [HttpGet] public IActionResult GetUsers() => Ok(new { Name = "John" });
+}
+```
+✔ Data Validation Attributes (System.ComponentModel.DataAnnotations)
+[Required] → Field must have a value.
+[MaxLength(50)] → Restricts max length.
+[Range(1, 100)] → Ensures value is within range.
+[EmailAddress] → Validates email format.
+
+```csharp
+public class User {
+    [Required] public string Name { get; set; }
+    [EmailAddress] public string Email { get; set; }
+}
+```
+🚀 Attributes enhance readability, validation, and API behavior!
