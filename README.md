@@ -389,6 +389,7 @@ sb.Append(" World");  // No new object
 ## 17. **.NET 5 vs .NET 8 – Key Differences**  
 
 **Versions I've used: .Net core 5, .NET 8**
+
 **.NET 8 :- Faster, efficient, cloud-ready**
 
 ✅ **Performance** → .NET 8 is **faster**
