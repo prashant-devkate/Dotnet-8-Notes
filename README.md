@@ -395,3 +395,24 @@ sb.Append(" World");  // No new object
 ✅ **Performance** → .NET 8 is **faster**
 ✅ **Long-Term Support (LTS)** → .NET 8 (LTS).    
 ✅ **Cloud & AI** → .NET 8 **integrates better with cloud & AI workloads**.  
+
+## 18. **Role-Based Authorization**  
+
+✅ **Assign Role:**  
+```csharp
+await _userManager.AddToRoleAsync(user, "Admin");
+```
+
+✅ **Restrict Access:**  
+```csharp
+[Authorize(Roles = "Admin")]
+```
+
+✅ **Policy-Based:**   -> `Program.cs`
+```csharp
+builder.Services.AddAuthorization(options => 
+    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin")));
+```
+```csharp
+[Authorize(Policy = "AdminOnly")]
+```
