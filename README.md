@@ -353,7 +353,7 @@ app.UseExceptionHandler("/error");
 return Problem(statusCode: 500, title: "Error");
 ```
 
-## 15. ### **.NET Core Filters**  
+## 15. **.NET Core Filters**  
 
  **Filters** control execution flow 
 
@@ -371,5 +371,18 @@ public class LogFilter : ActionFilterAttribute {
         Console.WriteLine("Action Started...");
     }
 }
+```
+## 16. **`string` vs `StringBuilder`**  
+
+✅ **`string` (Immutable)** → New object on change. Slow for modifications.  
+```csharp
+string str = "Hello";  
+str += " World";  // New object created  
+```
+
+✅ **`StringBuilder` (Mutable)** → Modifies in-place. Faster for multiple changes.  
+```csharp
+StringBuilder sb = new("Hello");  
+sb.Append(" World");  // No new object  
 ```
 
