@@ -133,3 +133,36 @@ public class User {
 }
 ```
 🚀 Attributes enhance readability, validation, and API behavior!
+
+## 6. ### **Nullable Reference Types in .NET Core 8**  
+
+✅ **Prevents `null` reference errors at compile time.**  
+✅ **Introduced in C# 8, enabled by default in .NET 8.**  
+
+---
+
+### **1. Enable/Disable Nullable Reference Types**  
+- **Enabled by default in .NET 8** (`.csproj` file):  
+  ```xml
+  <Nullable>enable</Nullable>
+  ```
+- **Disable it if needed:**  
+  ```xml
+  <Nullable>disable</Nullable>
+  ```
+
+---
+
+### **2. Usage**  
+
+#### **✔ Nullable (`?` operator)**
+```csharp
+string? name = null; // Allowed
+```
+
+#### **✔ Non-Nullable (Default)**
+```csharp
+string name = null; // ❌ Compilation Warning (Possible null assignment)
+```
+
+🚀 **Helps avoid runtime `NullReferenceException`**
