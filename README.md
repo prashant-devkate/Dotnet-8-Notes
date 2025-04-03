@@ -53,15 +53,16 @@
 
 ## 3. Serialization & Deserialization in .NET 8
 1. Using System.Text.Json (Recommended)
+   
 ✅ Serialize (Object → JSON)
 
-csharp
-Copy
-Edit
+```csharp
 using System.Text.Json;
 
 var obj = new { Name = "John", Age = 30 };
 string json = JsonSerializer.Serialize(obj);
+```
+
 ✅ Deserialize (JSON → Object)
 
 ```csharp
