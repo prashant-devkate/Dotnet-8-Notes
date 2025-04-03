@@ -430,3 +430,15 @@ public IActionResult Get(int id) => Ok($"Product {id}");
 ```csharp
 app.MapControllerRoute("default", "{controller}/{action}/{id?}");
 ```
+
+## 20. **IEnumerable vs IQueryable**  
+
+✅ **`IEnumerable`** → In-memory, slower for large data.  
+```csharp
+IEnumerable<Product> products = db.Products.ToList(); // Fetches all, filters later
+```
+
+✅ **`IQueryable`** → DB-side, efficient for large data.  
+```csharp
+IQueryable<Product> products = db.Products.Where(p => p.Price > 100); // Filters in DB
+```
