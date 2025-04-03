@@ -457,3 +457,25 @@ public IActionResult Get() => Ok("Success");
 ```csharp
 public ActionResult<Product> Get() => new Product();
 ```
+
+## 22. **OOPs in C# .NET**  -> makes code modular, reusable & scalable
+
+✅ **Encapsulation** → Hides data using properties.  
+```csharp
+class Person { private string name; public string Name { get; set; } }
+```
+
+✅ **Abstraction** → Hides implementation details.  
+```csharp
+abstract class Animal { public abstract void MakeSound(); }
+```
+
+✅ **Inheritance** → Reuse & extend functionality.  
+```csharp
+class Dog : Animal { public override void MakeSound() => Console.WriteLine("Bark!"); }
+```
+
+✅ **Polymorphism** → Multiple forms of a method.  
+```csharp
+class Cat : Animal { public override void MakeSound() => Console.WriteLine("Meow!"); }
+```
