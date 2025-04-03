@@ -134,7 +134,7 @@ public class User {
 ```
 🚀 Attributes enhance readability, validation, and API behavior!
 
-## 6. ### **Nullable Reference Types in .NET Core 8**  
+## 6. **Nullable Reference Types in .NET Core 8**  
 
 ✅ **Prevents `null` reference errors at compile time.**  
 ✅ **Introduced in C# 8, enabled by default in .NET 8.**  
